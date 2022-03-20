@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaTwitter, FaInstagram, FaDiscord} from 'react-icons/fa'
+import {FaTwitter} from 'react-icons/fa'
 import {
     SidebarContainer,
     Icon,
@@ -13,32 +13,35 @@ import {
 
 const Sidebar = ({isOpen, toggle}) => {
     return (
-        <SidebarContainer isOpen={isOpen} onClick={toggle}>
+        <SidebarContainer isOpen={isOpen} >
             <Icon onClick={toggle}>
                 <CloseIcon />
             </Icon>
             <SideBarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to="projects" onClick={toggle}>
-                        Projects
-                    </SidebarLink>
                     <SidebarLink to="about" onClick={toggle}>
-                        About Us
+                        About
                     </SidebarLink>
-                    <SidebarLink to="charity" onClick={toggle}>
-                        Charity
+                    <SidebarLink to="services" onClick={toggle}>
+                        What We Do
+                    </SidebarLink>
+                    <SidebarLink to="Pricing" onClick={toggle}>
+                        Pricing
+                    </SidebarLink>
+                    <SidebarLink to="projects" onClick={toggle}>
+                        Portfolio
                     </SidebarLink>
                 </SidebarMenu>
                 <SideSocialIconWrap>
-                    <SocialIconLink href="//https://twitter.com/CryptoPresis" target="_blank" aria-label="Twitter">
+                    <SocialIconLink href="//twitter.com/simlabsio" target="_blank" aria-label="Twitter">
                         <FaTwitter />
                     </SocialIconLink>
-                    <SocialIconLink href="//https://instagra.com/cryptopresisnft" target="_blank" aria-label="Instagram">
+                    {/* <SocialIconLink href="//https://instagra.com/cryptopresisnft" target="_blank" aria-label="Instagram">
                         <FaInstagram />
                     </SocialIconLink>
                     <SocialIconLink href="//https://discord.com/cryptopresis" target="_blank" aria-label="Discord">
                         <FaDiscord />
-                    </SocialIconLink>
+                    </SocialIconLink> */}
                 </SideSocialIconWrap>
             </SideBarWrapper>
         </SidebarContainer>

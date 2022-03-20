@@ -92,12 +92,16 @@ export const SideSocialIconRoute = styled(LinkR)`
 
 export const SideSocialIconWrap = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: right;
-    width: 120px;
+    font-size: 1.2rem;
+    justify-content: center;
 `
 
-export const SocialIconLink = styled.div`
+export const SocialIconLink = styled.a`
     color: #fff;
     font-size: 20px;
+
+    &:hover {
+        color: #ffd700;
+        transition: 0.3s ease-out;
+    }
 `

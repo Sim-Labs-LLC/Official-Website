@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../ButtonElements';
+// import { NavLogo } from '../Navbar/NavbarElements';
 import {
     InfoContainer, 
     InfoWrapper, 
@@ -7,21 +8,23 @@ import {
     Column1, 
     Column2, 
     TextWrapper,
-    TopLine, 
+    // TopLine, 
+    InfoH1,
     Heading, 
     Subtitle,
     BtnWrap,
     ImgWrap,
-    Img
+    Img,
+    ImgLogo
 } from './infoElements';
 
 const InfoSection = ({
     lightBg,
     id, 
     imgStart, 
-    topline, 
+    // topline, 
     lightText, 
-    headline, 
+    // headline, 
     darkText, 
     description, 
     buttonlabel, 
@@ -34,12 +37,15 @@ const InfoSection = ({
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
+                <InfoH1>Portfolio</InfoH1>
                 <InfoWrapper>
                     <InfoRow imgStart={imgStart}>
                         <Column1>
                             <TextWrapper>
-                                <TopLine>{topline}</TopLine>
-                                <Heading lightText={lightText}>{headline}</Heading>
+                                {/* <TopLine>{topline}</TopLine> */}
+                                <Heading lightText={lightText}>
+                                    <ImgLogo src={require("../../images/logo.png")}/>
+                                </Heading>
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <BtnWrap>
                                     <Button to='https://cryptopresis.simlabs.io/'

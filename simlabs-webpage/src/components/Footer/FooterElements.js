@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {Link as LinkR} from 'react-router-dom';
+import {Link as LinkS} from 'react-scroll';
 
 export const FooterContainer = styled.footer`
     background-color: #101522;
@@ -54,14 +55,15 @@ export const FooterLinkTitle = styled.h1`
     margin-bottom: 16px;
 `;
 
-export const FooterLink = styled(Link)`
+export const FooterLink = styled(LinkS)`
     color: #fff;
     text-decoration: none;
     margin-bottom: 0.5rem;
     font-size: 14px;
+    cursor: pointer;
 
     &:hover {
-        color: #00ffff;
+        color: #ffd700;
         transition: 0.3s ease-out;
     }
 `;
@@ -76,14 +78,14 @@ export const SocialMediaWrap = styled.div`
     justify-content: space-between;
     alignt-items: center;
     max-width: 1100px;
-    margin: 40px auto 0 auto;
+    margin: 0 auto;
 
     @media screen and (max-width: 820px) {
         flex-direction: column;
     }
 `
 
-export const SocialLogo = styled(Link)`
+export const SocialLogo = styled(LinkS)`
     color: #fff;
     justify-self: start;
     cursor: pointer;
@@ -91,13 +93,21 @@ export const SocialLogo = styled(Link)`
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
     font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const WebsiteRights = styled.small`
     color: #fff;
-    margin-bottom: 12px;
+    margin: 0;
+    align-items: center;
+    justify-self: start;
+    flex-direction: column;
+    display: flex;
+    margin: auto 0;
 `
 
 export const SocialIcons = styled.div`
@@ -107,7 +117,24 @@ export const SocialIcons = styled.div`
     width: 120px;
 `
 
-export const SocialIconLink = styled.div`
+export const SocialIconLink = styled.a`
     color: #fff;
     font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ffd700;
+        transition: 0.3s ease-out;
+    }
+`
+
+export const ImgLogo = styled.img`
+    width: 80px;
+    align-items: center;
+    transition: width 0.5s;
+    transition: height 0.5s;
+
+    @media screen and (max-width: 768px) {
+        width: 60px;
+    }
 `

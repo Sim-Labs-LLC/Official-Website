@@ -26,7 +26,7 @@ export const NavbarContainer = styled.div`
     height: 80px;
     z-index: 1;
     width: 100%;
-    padding 24px 0 24px 0;
+    padding 12px 0 12px 0;
     max-width: 1100px;
 `
 
@@ -39,7 +39,8 @@ export const NavLogo = styled(LinkR)`
     align-items: center;
     margin-left: 24px;
     font-weight: bold;
-    text-decoration: none; 
+    text-decoration: none;
+    padding-bottom: 48px;
 `
 
 export const MobileIcon = styled.div`
@@ -83,7 +84,12 @@ export const NavLinks = styled(LinkS)`
     cursor: pointer;
 
     &.active {
-        border-bottom: 3px solid #00FFFF;
+        border-bottom: 3px solid #ffd700;
+    }
+
+    &:hover {
+        color: #ffd700;
+        transition: 0.3s ease-out;
     }
 `;
 
@@ -92,7 +98,7 @@ export const NavSocialIconLink = styled(LinkR)`
     background: #01bf71;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #ffd700;
     font-size: 16px;
     outline: none;
     border: none;
@@ -103,7 +109,7 @@ export const NavSocialIconLink = styled(LinkR)`
     &:hover {
         transition: all 0.2s ease-in-out;
         background: #fff;
-        color: #010606;
+        color: #ffd700;
     }
 `
 
@@ -112,9 +118,28 @@ export const NavSocialIcon = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 120px;
+    padding-left: 48px;
+    padding-top: 6px;
 `
 
-export const SocialIconLink = styled.div`
+export const SocialIconLink = styled.a`
     color: #fff;
     font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ffd700;
+        transition: 0.3s ease-out;
+    }
+`
+
+export const ImgLogo = styled.img`
+    width: 60px;
+    align-items: center;
+    transition: width 0.5s;
+    transition: height 0.5s;
+
+    @media screen and (max-width: 768px) {
+        width: 48px;
+    }
 `

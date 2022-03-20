@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Video from '../../videos/video4.mp4';
+import Video from '../../videos/video.mp4';
 import { Button } from '../ButtonElements';
 import { 
     HeroContainer, 
@@ -23,25 +23,22 @@ const HeroSection = () => {
     return (
         <HeroContainer>
             <HeroBg>
-                <VideoBg autoPlay loop muted src={Video} type='video4/mp4'/>
+                <VideoBg autoPlay loop muted src={Video} type='video/mp4'/>
             </HeroBg>
             <HeroContent>
-                <HeroH1>Welcome to Simlabs</HeroH1>
+                <HeroH1>Welcome to Sim Labs</HeroH1>
                 <HeroP>
-                    We are a team of Latin American developers and artists bringing innovation to 
-                    the Cryptocurrency space in El Salvador. Inspired by the legalization of 
-                    Bitcoin as legal tender in the country, The next step forward is bringing 
-                    Non-Fungible Tokens to the mainstream in Latin America.
+                    The Frontier of Innovation
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button 
-                        to='about' 
+                        to='onboarding' 
                         onMouseEnter={onHover} 
                         onMouseLeave={onHover}
                         primary='true'
                         dark='true'
                     >
-                        About Us {hover ? <ArrowForward /> : <ArrowRight />}
+                        Get Started {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>

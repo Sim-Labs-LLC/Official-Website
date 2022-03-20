@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FaBars, FaTwitter, FaInstagram, FaDiscord} from 'react-icons/fa';
+import {FaBars, FaTwitter} from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib';
 import {animateScroll as scroll} from 'react-scroll';
 import { 
@@ -11,7 +11,8 @@ import {
     NavItem, 
     NavLinks,
     NavSocialIcon,
-    SocialIconLink
+    SocialIconLink, 
+    ImgLogo
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -39,35 +40,44 @@ const Navbar = ({ toggle }) => {
                 <Nav scrollNav={scrollNav}>
                     <NavbarContainer>
                         <NavLogo to="/" onClick={toggleHome}>
-                            Simlabs
+                            <ImgLogo src={require("../../images/logo.svg")} alt="logo"/>
                         </NavLogo>
                         <MobileIcon onClick={toggle}>
                             <FaBars />
                         </MobileIcon>
                         <NavMenu>
                             <NavItem>
-                                <NavLinks to="projects" 
-                                smooth={true} duration={500} spy={true} exact='true' offset={-80}
-                                >Projects</NavLinks>
+                                <NavLinks to="about" smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                                    About
+                                </NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="about">About Us</NavLinks>
+                                <NavLinks to="services" smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                                    What We Do
+                                </NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="charity">Charity</NavLinks>
+                                <NavLinks to="pricing" smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                                    Pricing
+                                </NavLinks>
                             </NavItem>
+                            <NavItem>
+                                <NavLinks to="projects" smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                                    Portfolio
+                                </NavLinks>
+                            </NavItem>
+                            <NavSocialIcon>
+                                <SocialIconLink href="//twitter.com/simlabsio" target="_blank" aria-label="Twitter">
+                                    <FaTwitter />
+                                </SocialIconLink>
+                                {/* <SocialIconLink href="//https://instagram.com/cryptopresisnft" target="_blank" aria-label="Instagram">
+                                    <FaInstagram />
+                                </SocialIconLink>
+                                <SocialIconLink href="//https://discord.com/cryptopresis" target="_blank" aria-label="Discord">
+                                    <FaDiscord />
+                                </SocialIconLink> */}
+                            </NavSocialIcon>
                         </NavMenu>
-                        <NavSocialIcon>
-                            <SocialIconLink href="//https://twitter.com/CryptoPresis" target="_blank" aria-label="Twitter">
-                                <FaTwitter />
-                            </SocialIconLink>
-                            <SocialIconLink href="//https://instagra.com/cryptopresisnft" target="_blank" aria-label="Instagram">
-                                <FaInstagram />
-                            </SocialIconLink>
-                            <SocialIconLink href="//https://discord.com/cryptopresis" target="_blank" aria-label="Discord">
-                                <FaDiscord />
-                            </SocialIconLink>
-                        </NavSocialIcon>
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>
