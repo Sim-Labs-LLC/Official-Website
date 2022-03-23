@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link as LinkR} from 'react-router-dom';
+// import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 
 export const FooterContainer = styled.footer`
@@ -108,6 +108,10 @@ export const WebsiteRights = styled.small`
     flex-direction: column;
     display: flex;
     margin: auto 0;
+
+    @media screen and (max-width: 460px) {
+        font-size: 10px;
+    }
 `
 
 export const SocialIcons = styled.div`

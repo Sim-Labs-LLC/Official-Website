@@ -1,6 +1,5 @@
-import React from 'react';
-import { Button } from '../ButtonElements';
-// import { NavLogo } from '../Navbar/NavbarElements';
+import React, { useState } from 'react';
+import { ButtonA } from '../ButtonElements';
 import {
     InfoContainer, 
     InfoWrapper, 
@@ -8,7 +7,6 @@ import {
     Column1, 
     Column2, 
     TextWrapper,
-    // TopLine, 
     InfoH1,
     Heading, 
     Subtitle,
@@ -22,18 +20,20 @@ const InfoSection = ({
     lightBg,
     id, 
     imgStart, 
-    // topline, 
     lightText, 
-    // headline, 
     darkText, 
     description, 
     buttonlabel, 
     img, 
-    alt,
-    primary,
-    dark,
-    dark2
+    alt
 }) => {
+
+    const [hover, setHover] = useState(false)
+
+    const onHover = () => {
+        setHover(!hover);
+    };
+
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
@@ -42,22 +42,19 @@ const InfoSection = ({
                     <InfoRow imgStart={imgStart}>
                         <Column1>
                             <TextWrapper>
-                                {/* <TopLine>{topline}</TopLine> */}
                                 <Heading lightText={lightText}>
                                     <ImgLogo src={require("../../images/logo.png")}/>
                                 </Heading>
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <BtnWrap>
-                                    <Button to='https://cryptopresis.simlabs.io/'
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
-                                        exact="true"
-                                        offset={-80}
-                                        primary={primary ? 1 : 0}
-                                        dark={dark ? 1 : 0}
-                                        dark2={dark2 ? 1 : 0}
-                                        >{buttonlabel}</Button>
+                                    <ButtonA href='//cryptopresis.simlabs.io/' target="_blank"
+                                    onMouseEnter={onHover} 
+                                    onMouseLeave={onHover}
+                                    primary='true'
+                                    dark='true'
+                                    >
+                                        {buttonlabel}
+                                    </ButtonA>
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>
